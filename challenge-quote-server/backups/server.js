@@ -17,9 +17,13 @@ app.get("/", function(request, response) {
 });
 
 //START OF YOUR CODE...
-
+app.get("/quotes", function (request, response) {
+  response.json(Quotes);
+});
 //...END OF YOUR CODE
-
+app.get("/quotes/random", function (request, response) {
+  response.json(pickFromArray(Quotes));
+});
 //You can use this function to pick one element at random from a given array
 //example: pickFromArray([1,2,3,4]), or
 //example: pickFromArray(myContactsArray)
