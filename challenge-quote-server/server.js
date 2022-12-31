@@ -7,6 +7,16 @@ const express = require("express");
  app.get("/quotes", function (request, response) {
    response.send(Quotes);
  });
+
+  app.get("/quotes/search", function (request, response) {
+    const searchWord = request.query.term;
+    const result = search(searchWord)
+    response.send(result);
+  });
+
+  function search(term){
+    return Quotes.filter((q)=>q.quote.includes(term));
+  }
  
  
  app.get("/quotes/random", function (request, response) {
