@@ -5,12 +5,12 @@ const express = require("express");
 
 
  app.get("/quotes", function (request, response) {
-   response.json(Quotes);
+   response.send(Quotes);
  });
  
  
  app.get("/quotes/random", function (request, response) {
-   response.json(pickFromArray(Quotes));
+   response.send(pickFromArray(Quotes));
  });
 
  function pickFromArray(arr) {
